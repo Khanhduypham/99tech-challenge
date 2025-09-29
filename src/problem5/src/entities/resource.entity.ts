@@ -7,7 +7,9 @@ export class Resource extends BaseEntity {
   @Column()
   name!: string;
 
-  @Column()
+  @Column({
+    nullable: true
+  })
   description?: string;
 
   @Column({

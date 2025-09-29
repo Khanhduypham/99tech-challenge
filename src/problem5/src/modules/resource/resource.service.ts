@@ -77,6 +77,6 @@ export class ResourceService {
       throw new NotFoundError("Resource does not exist!");
     }
 
-    return await this.repo.update(resource, { isDeleted: true });
+    return this.repo.save({ ...resource, isDeleted: true });
   }
 }

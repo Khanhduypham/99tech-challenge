@@ -9,7 +9,7 @@ const errorHandler = (
   res: Response,
   _next: NextFunction
 ) => {
-  console.error("❌ Error:", err);
+  console.error("Error:", err);
 
   if (err.name === ERROR_TYPE.NOT_FOUND) {
     res.status(404).json({
