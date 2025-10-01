@@ -17,6 +17,13 @@ app.use("/api", router);
 
 app.use(errorHandler);
 
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Not Found",
+    path: req.originalUrl,
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 
 AppDataSource.initialize()
